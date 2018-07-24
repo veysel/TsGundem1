@@ -1,1 +1,1 @@
-# TsGundem1
+# TeknoSeyir Gündem Uygulaması
