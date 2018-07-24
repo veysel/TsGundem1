@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeActivity">
+
+    <LinearLayout
+        android:id="@+id/MainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <TextView
+            android:id="@+id/TvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="#dee2e2"
+            android:ellipsize="marquee"
+            android:fadingEdge="horizontal"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:padding="5dp"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:text="Podcast seçilmedi ..."
+            android:textColor="#bf4f3f" />
+
+        <LinearLayout
+            android:id="@+id/ContentLayout"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="#50BF4F3F"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/TvContentTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:background="#50BF4F3F"
+                android:gravity="center"
+                android:text="Konu Başlıkları" />
+
+            <ListView
+                android:id="@+id/ListContent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#ffffff"
+                android:scrollbars="vertical" />
+        </LinearLayout>
+
+        <SeekBar
+            android:id="@+id/SeekBarTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:progressTint="@color/colorPrimaryDark"
+            android:thumbTint="@color/colorPrimaryDark" />
+
+        <LinearLayout
+            android:id="@+id/TimeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:background="#a0bf4f3f"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/TvCurrentTime"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:text="00:00:00" />
+
+            <TextView
+                android:id="@+id/TvSpaceTime"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="    " />
+
+            <TextView
+                android:id="@+id/TvMaxTime"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:text="00:00:00" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/MediaPlayerLayout"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="#50BF4F3F"
+            android:orientation="horizontal"
+            android:padding="17dp">
+
+            <ImageView
+                android:id="@+id/BtnPrev"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:onClick="BtnPrevClick"
+                app:srcCompat="@android:drawable/ic_media_rew" />
+
+            <ImageView
+                android:id="@+id/BtnPlayPause"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:onClick="BtnPlayPauseClick"
+                app:srcCompat="@android:drawable/ic_media_play" />
+
+            <ImageView
+                android:id="@+id/BtnNext"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:onClick="BtnNextClick"
+                app:srcCompat="@android:drawable/ic_media_ff" />
+
+            <ImageView
+                android:id="@+id/BtnCancel"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:onClick="BtnCancelClick"
+                app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/MenuLayout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#a0bf4f3f"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/BtnList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="#50BF4F3F"
+                android:onClick="BtnListClick"
+                app:srcCompat="@android:drawable/ic_menu_sort_by_size" />
+
+            <ImageButton
+                android:id="@+id/BtnDetails"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="#50BF4F3F"
+                android:onClick="BtnDetailsClick"
+                app:srcCompat="@android:drawable/ic_menu_info_details" />
+
+            <Button
+                android:id="@+id/BtnOfflineList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="#50BF4F3F"
+                android:onClick="BtnOfflineListClick"
+                android:text="Offline"
+                android:textColor="#c8ffffff"
+                app:srcCompat="@android:drawable/ic_menu_info_details" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>
