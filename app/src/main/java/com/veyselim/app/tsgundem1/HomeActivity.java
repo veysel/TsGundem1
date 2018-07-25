@@ -127,11 +127,6 @@ public class HomeActivity extends AppCompatActivity {
         }
     }
 
-    public void BtnOfflineListClick(View v) {
-        Intent intent = new Intent(getApplicationContext(), ListOfflineActivity.class);
-        startActivity(intent);
-    }
-
     public void ClearHomeComponent() {
         TvTitle.setText("Podcast seçilmedi ...");
         TvCurrentTime.setText("");

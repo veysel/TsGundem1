@@ -13,13 +13,9 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.veyselim.app.tsgundem1.Common.CommonData;
 import com.veyselim.app.tsgundem1.Model.PodcastModel;
 import com.veyselim.app.tsgundem1.Tools.DataTools;
-import com.veyselim.app.tsgundem1.Tools.DownloadFileTools;
 import com.veyselim.app.tsgundem1.Tools.MediaPlayerTools;
-
-import java.util.ArrayList;
 
 public class ListAllActivity extends AppCompatActivity {
 
@@ -39,63 +35,12 @@ public class ListAllActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 final int tempCount = position + 1;
-
-                final AlertDialog.Builder alertDialog = new AlertDialog.Builder(ListAllActivity.this);
-                LayoutInflater inflater = getLayoutInflater();
-                View convertView = (View) inflater.inflate(R.layout.custom_dialog_layout, null);
-
-                alertDialog.setView(convertView);
-                alertDialog.setTitle(String.valueOf(tempCount) + " Nolu Podcast");
-
-                ListView lv = (ListView) convertView.findViewById(R.id.listView1);
-                ArrayAdapter<String> adapter = new ArrayAdapter<String>(ListAllActivity.this, R.layout.custom_list_layout_1, getResources().getStringArray(R.array.list_alert_dialog));
-                lv.setAdapter(adapter);
-
-                final AlertDialog ad = alertDialog.show();
-
-                lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-                        switch (position) {
-                            case 0: {
-                                // Başlat
-                                if (IsNetworkConnection()) {
-                                    String tempTotalCount = String.valueOf(tempCount);
-                                    MediaPlayerTools.CreateMediaPlayer(DataTools.GetPodcastFromTotalCount(tempTotalCount));
-                                    Toast.makeText(getApplicationContext(), tempTotalCount + " nolu podcast başladı", Toast.LENGTH_SHORT).show();
-                                } else {
-                                    Toast.makeText(getApplicationContext(), "LÜTFEN İNTERNET BAĞLANTINIZI KONTROL EDİN", Toast.LENGTH_SHORT).show();
-                                }
-                                break;
-                            }
-                            case 1: {
-                                // İndir
-                                if (IsNetworkConnection()) {
-
-                                    PodcastModel tempPodcastModel = new PodcastModel();
-                                    tempPodcastModel = DataTools.GetPodcastFromTotalCount(String.valueOf(tempCount));
-
-                                    Toast.makeText(ListAllActivity.this, "İndirme Başladı", Toast.LENGTH_SHORT).show();
-
-                                    DownloadFileTools tempTools = new DownloadFileTools();
-                                    tempTools.TitlePodcast = String.valueOf(tempPodcastModel.totalCount) + "-TsGundem-" + tempPodcastModel.year + "-" + String.valueOf(tempPodcastModel.count);
-                                    tempTools.execute(tempPodcastModel.podcastLink);
-
-                                } else {
-                                    Toast.makeText(getApplicationContext(), "LÜTFEN İNTERNET BAĞLANTINIZI KONTROL EDİN", Toast.LENGTH_SHORT).show();
-                                }
-                                break;
-                            }
-                            default: {
-                                Toast.makeText(ListAllActivity.this, "Seçim sırasında hata oluştu !", Toast.LENGTH_SHORT).show();
-                                break;
-                            }
-                        }
-
-                        ad.dismiss();
-                    }
-                });
+                if (IsNetworkConnection()) {
+                    MediaPlayerTools.CreateMediaPlayer(DataTools.GetPodcastFromTotalCount(String.valueOf(tempCount)));
+                    Toast.makeText(getApplicationContext(), String.valueOf(tempCount) + " nolu podcast başladı", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(getApplicationContext(), "LÜTFEN İNTERNET BAĞLANTINIZI KONTROL EDİN", Toast.LENGTH_SHORT).show();
+                }
 
             }
         });

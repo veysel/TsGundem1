@@ -159,18 +159,6 @@
                 android:onClick="BtnDetailsClick"
                 app:srcCompat="@android:drawable/ic_menu_info_details" />
 
-            <Button
-                android:id="@+id/BtnOfflineList"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="5dp"
-                android:layout_weight="1"
-                android:background="#50BF4F3F"
-                android:onClick="BtnOfflineListClick"
-                android:text="Offline"
-                android:textColor="#c8ffffff"
-                app:srcCompat="@android:drawable/ic_menu_info_details" />
-
         </LinearLayout>
 
     </LinearLayout>
