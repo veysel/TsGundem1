@@ -1,9 +1,4 @@
 <resources>
     <string name="app_name">Teknoseyir Gündem</string>
     <string name="loading_text">Yükleniyor</string>
-    <string name="save_file_text">TsGundemPodcast</string>
-    <array name="list_alert_dialog">
-        <item>Başlat</item>
-        <item>İndir</item>
-    </array>
 </resources>
