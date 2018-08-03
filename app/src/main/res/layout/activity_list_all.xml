@@ -32,7 +32,7 @@
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:background="#50BF4F3F"
+                android:background="@drawable/selector_button_effect"
                 android:onClick="BtnBackClick"
                 app:srcCompat="@android:drawable/ic_menu_revert" />
 
@@ -42,7 +42,7 @@
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:background="#50BF4F3F"
+                android:background="@drawable/selector_button_effect"
                 android:onClick="BtnUpdateClick"
                 app:srcCompat="@android:drawable/ic_popup_sync" />
 
