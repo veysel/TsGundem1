@@ -13,7 +13,7 @@ import com.veyselim.app.tsgundem1.Tools.MediaPlayerTools;
 
 public class DetailsActivity extends AppCompatActivity {
 
-    private TextView TvTitle, TvNo, TvYear, TvYearNo, TvUploadDate, TvRangeDate, TvExplanation, TvContentList;
+    private TextView TvTitle, TvNo, TvYear, TvYearNo, TvUploadDate, TvRangeDate, TvExplanation, TvContentCount, TvPodcastLink, TvVideoLink, TvSiteLink, TvContentList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +27,10 @@ public class DetailsActivity extends AppCompatActivity {
         TvUploadDate = (TextView) findViewById(R.id.TvUploadDate);
         TvRangeDate = (TextView) findViewById(R.id.TvRangeDate);
         TvExplanation = (TextView) findViewById(R.id.TvExplanation);
+        TvContentCount = (TextView) findViewById(R.id.TvContentCount);
+        TvPodcastLink = (TextView) findViewById(R.id.TvPodcastLink);
+        TvVideoLink = (TextView) findViewById(R.id.TvVideoLink);
+        TvSiteLink = (TextView) findViewById(R.id.TvSiteLink);
         TvContentList = (TextView) findViewById(R.id.TvContentList);
 
         ListDetailsUpdate();
@@ -56,6 +60,10 @@ public class DetailsActivity extends AppCompatActivity {
             TvRangeDate.setText(tempRangeBuilder.toString());
 
             TvExplanation.setText("Açıklama : " + tempModel.explanationPodcast);
+            TvContentCount.setText("Konu Başlık Sayısı : " + String.valueOf(tempModel.content.size()));
+            TvPodcastLink.setText("Podcast Link (Chrome ile açılıp indirilebilir) : " + tempModel.podcastLink);
+            TvVideoLink.setText("Video Link : " + tempModel.videoLink);
+            TvSiteLink.setText("Site Link : " + tempModel.siteLink);
 
             StringBuilder tempBuilder = new StringBuilder();
             for (int i = 0; i < tempModel.content.size(); ++i) {
@@ -77,6 +85,10 @@ public class DetailsActivity extends AppCompatActivity {
         TvUploadDate.setText("Upload Date");
         TvRangeDate.setText("Range Date");
         TvExplanation.setText("Explanation");
+        TvContentCount.setText("Content Count");
+        TvPodcastLink.setText("Podcast Link");
+        TvVideoLink.setText("Video Link");
+        TvSiteLink.setText("Site Link");
         TvContentList.setText("");
     }
 }

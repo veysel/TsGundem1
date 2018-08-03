@@ -74,6 +74,37 @@
                     android:text="Explanation" />
 
                 <TextView
+                    android:id="@+id/TvContentCount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="Content Count" />
+
+                <TextView
+                    android:id="@+id/TvPodcastLink"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autoLink="web"
+                    android:padding="10dp"
+                    android:text="Podcast Link" />
+
+                <TextView
+                    android:id="@+id/TvVideoLink"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autoLink="web"
+                    android:padding="10dp"
+                    android:text="Video Link" />
+
+                <TextView
+                    android:id="@+id/TvSiteLink"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autoLink="web"
+                    android:padding="10dp"
+                    android:text="Site Link" />
+
+                <TextView
                     android:id="@+id/TvSpace"
                     android:layout_width="match_parent"
                     android:layout_height="4dp"
