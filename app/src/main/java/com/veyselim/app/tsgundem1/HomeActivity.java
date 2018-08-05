@@ -127,6 +127,11 @@ public class HomeActivity extends AppCompatActivity {
         }
     }
 
+    public void BtnSearchListClick(View v) {
+        Intent intent = new Intent(getApplicationContext(), SearchListActivity.class);
+        startActivity(intent);
+    }
+
     public void ClearHomeComponent() {
         TvTitle.setText("Podcast seçilmedi ...");
         TvCurrentTime.setText("");

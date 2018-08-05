@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SearchListActivity">
+
+    <LinearLayout
+        android:id="@+id/MainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/TvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#dee2e2"
+            android:padding="5dp"
+            android:text=""
+            android:textColor="#bf4f3f" />
+
+        <EditText
+            android:id="@+id/EditSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:ems="10"
+            android:hint="Ara"
+            android:inputType="text"
+            android:padding="10dp"
+            android:text="" />
+
+        <ListView
+            android:id="@+id/ListAllContent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:scrollbars="vertical" />
+
+        <LinearLayout
+            android:id="@+id/MenuLayout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#a0bf4f3f"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/BtnBack"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_button_effect"
+                android:onClick="BtnBackClick"
+                app:srcCompat="@android:drawable/ic_menu_revert" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

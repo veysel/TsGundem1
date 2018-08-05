@@ -74,4 +74,20 @@ public class DataTools {
 
         return tempList;
     }
+
+    public static ArrayList<String> GetAllContentListForSearch() {
+        ArrayList<String> tempList = new ArrayList<>();
+
+        for (int i = 0; i < CommonData.staticPodcastList.size(); ++i) {
+            for (int j = 0; j < CommonData.staticPodcastList.get(i).content.size(); ++j) {
+                StringBuilder tempText = new StringBuilder();
+                tempText.append(CommonData.staticPodcastList.get(i).totalCount);
+                tempText.append("-");
+                tempText.append(CommonData.staticPodcastList.get(i).content.get(j).contentText);
+                tempList.add(tempText.toString());
+            }
+        }
+
+        return tempList;
+    }
 }

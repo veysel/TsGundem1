@@ -159,6 +159,16 @@
                 android:onClick="BtnDetailsClick"
                 app:srcCompat="@android:drawable/ic_menu_info_details" />
 
+            <ImageButton
+                android:id="@+id/BtnSearchList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_button_effect"
+                android:onClick="BtnSearchListClick"
+                app:srcCompat="@android:drawable/ic_menu_search" />
+
         </LinearLayout>
 
     </LinearLayout>
