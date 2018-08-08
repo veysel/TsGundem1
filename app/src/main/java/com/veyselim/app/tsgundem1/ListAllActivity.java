@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.veyselim.app.tsgundem1.Model.PodcastModel;
 import com.veyselim.app.tsgundem1.Tools.DataTools;
 import com.veyselim.app.tsgundem1.Tools.MediaPlayerTools;
+import com.veyselim.app.tsgundem1.Tools.WebTools;
 
 public class ListAllActivity extends AppCompatActivity {
 
@@ -51,8 +52,15 @@ public class ListAllActivity extends AppCompatActivity {
     }
 
     public void BtnUpdateClick(View v) {
-        ListUpdate();
-        Toast.makeText(getApplicationContext(), "Liste Güncellendi", Toast.LENGTH_SHORT).show();
+
+        if (IsNetworkConnection()) {
+            WebTools.GetAllPodcastData(getApplicationContext());
+            ListUpdate();
+            Toast.makeText(getApplicationContext(), "Liste Güncellendi", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(getApplicationContext(), "LÜTFEN İNTERNET BAĞLANTINIZI KONTROL EDİN", Toast.LENGTH_SHORT).show();
+        }
+        
     }
 
     public void ListUpdate() {
