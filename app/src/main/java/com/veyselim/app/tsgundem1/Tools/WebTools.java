@@ -33,8 +33,6 @@ public class WebTools {
 
     public static void GetAllPodcastData(final Context context) {
 
-        //Toast.makeText(context, "Veriler yükleniyor", Toast.LENGTH_SHORT).show();
-
         commonRequestQueue = Volley.newRequestQueue(context);
 
         StringRequest request = new StringRequest(API_URL, new Response.Listener<String>() {
@@ -83,8 +81,6 @@ public class WebTools {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-
-                //Toast.makeText(context, "Başarılı", Toast.LENGTH_SHORT).show();
 
             }
         }, new Response.ErrorListener() {
