@@ -21,16 +21,35 @@
             android:text=""
             android:textColor="#bf4f3f" />
 
-        <EditText
-            android:id="@+id/EditSearch"
+        <LinearLayout
+            android:id="@+id/InputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:ems="10"
-            android:hint="Ara"
-            android:inputType="text"
-            android:padding="10dp"
-            android:text="" />
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/EditSearch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="Konu başlıklarında ara..."
+                android:inputType="text"
+                android:padding="10dp"
+                android:text="" />
+
+            <ImageButton
+                android:id="@+id/BtnSearch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_button_effect"
+                android:onClick="BtnSearchClick"
+                app:srcCompat="@android:drawable/ic_menu_search" />
+
+        </LinearLayout>
 
         <ListView
             android:id="@+id/ListAllContent"

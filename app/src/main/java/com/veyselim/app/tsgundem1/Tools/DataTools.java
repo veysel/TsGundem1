@@ -82,7 +82,11 @@ public class DataTools {
             for (int j = 0; j < CommonData.staticPodcastList.get(i).content.size(); ++j) {
                 StringBuilder tempText = new StringBuilder();
                 tempText.append(CommonData.staticPodcastList.get(i).totalCount);
-                tempText.append("-");
+                tempText.append("- (");
+                tempText.append(CommonData.staticPodcastList.get(i).year);
+                tempText.append("/");
+                tempText.append(CommonData.staticPodcastList.get(i).count);
+                tempText.append(") - ");
                 tempText.append(CommonData.staticPodcastList.get(i).content.get(j).contentText);
                 tempList.add(tempText.toString());
             }
