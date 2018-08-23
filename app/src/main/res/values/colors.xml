@@ -6,4 +6,7 @@
 
     <color name="colorButtonNormal">#50BF4F3F</color>
     <color name="colorButtonPress">#dcbf4f3f</color>
+
+    <color name="colorListButtonNormal">#ffffff</color>
+    <color name="colorListButtonPress">#dcececec</color>
 </resources>
