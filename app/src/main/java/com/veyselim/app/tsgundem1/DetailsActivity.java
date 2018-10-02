@@ -1,11 +1,16 @@
 package com.veyselim.app.tsgundem1;
 
+import android.app.DownloadManager;
+import android.content.Context;
+import android.net.Uri;
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.veyselim.app.tsgundem1.Model.PodcastModel;
 import com.veyselim.app.tsgundem1.Tools.DataTools;
@@ -38,6 +43,10 @@ public class DetailsActivity extends AppCompatActivity {
 
     public void BtnBackClick(View v) {
         finish();
+    }
+
+    public void BtnDownloadClick(View v) {
+        DownloadPodcast();
     }
 
     public void ListDetailsUpdate() {
@@ -90,5 +99,32 @@ public class DetailsActivity extends AppCompatActivity {
         TvVideoLink.setText("Video Link");
         TvSiteLink.setText("Site Link");
         TvContentList.setText("");
+    }
+
+    public void DownloadPodcast() {
+        try {
+            if (MediaPlayerTools.GetMediaPlayerPodcastModel() != null) {
+                Toast.makeText(this, "İndirme başladı", Toast.LENGTH_SHORT).show();
+
+                PodcastModel tempModel = MediaPlayerTools.GetMediaPlayerPodcastModel();
+
+                DownloadManager downloadmanager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
+                Uri uri = Uri.parse(tempModel.podcastLink);
+
+                DownloadManager.Request request = new DownloadManager.Request(uri);
+                request.setTitle(tempModel.titlePodcast);
+                request.setDescription("İndiriliyor");
+                request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+                request.setVisibleInDownloadsUi(false);
+
+                String podcastPath = tempModel.year + "-" + String.valueOf(tempModel.count) + "-ts.mp3";
+
+                request.setDestinationInExternalPublicDir("TeknoSeyirGundem", podcastPath);
+
+                downloadmanager.enqueue(request);
+            }
+        } catch (Exception exp) {
+            // TODO:: Exception log write
+        }
     }
 }

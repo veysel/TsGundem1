@@ -108,10 +108,10 @@
                     android:id="@+id/TvSpace"
                     android:layout_width="match_parent"
                     android:layout_height="4dp"
-                    android:layout_marginBottom="5dp"
                     android:layout_marginLeft="3dp"
-                    android:layout_marginRight="3dp"
                     android:layout_marginTop="5dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginBottom="5dp"
                     android:background="#50BF4F3F" />
 
                 <TextView
@@ -150,6 +150,16 @@
                 android:background="@drawable/selector_button_effect"
                 android:onClick="BtnBackClick"
                 app:srcCompat="@android:drawable/ic_menu_revert" />
+
+            <ImageButton
+                android:id="@+id/BtnDownload"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_button_effect"
+                android:onClick="BtnDownloadClick"
+                app:srcCompat="@android:drawable/stat_sys_download" />
 
         </LinearLayout>
     </LinearLayout>
