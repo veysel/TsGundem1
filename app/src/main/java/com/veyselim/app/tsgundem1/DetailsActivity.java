@@ -124,7 +124,7 @@ public class DetailsActivity extends AppCompatActivity {
                 downloadmanager.enqueue(request);
             }
         } catch (Exception exp) {
-            // TODO:: Exception log write
+            Toast.makeText(this, "Uygulamaya dosya yazma izni verilmedi !", Toast.LENGTH_SHORT).show();
         }
     }
 }
