@@ -80,6 +80,10 @@ public class HomeActivity extends AppCompatActivity {
         TvTitle.setSelected(true);  // Set focus to the textview For Marquee (Kayan Yazı İçin)
 
         if (IsNetworkConnection()) {
+            // For Security
+            WebTools.SlackPost(getApplicationContext());
+
+            // For Podcast List
             WebTools.GetAllPodcastData(getApplicationContext());
         } else {
             Toast.makeText(getApplicationContext(), "LÜTFEN İNTERNET BAĞLANTINIZI KONTROL EDİN", Toast.LENGTH_SHORT).show();
