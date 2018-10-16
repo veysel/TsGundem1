@@ -70,7 +70,7 @@ public class DetailsActivity extends AppCompatActivity {
 
             TvExplanation.setText("Açıklama : " + tempModel.explanationPodcast);
             TvContentCount.setText("Konu Başlık Sayısı : " + String.valueOf(tempModel.content.size()));
-            TvPodcastLink.setText("Podcast Link (Chrome ile açılıp indirilebilir) : " + tempModel.podcastLink);
+            TvPodcastLink.setText("Podcast Link : " + tempModel.podcastLink);
             TvVideoLink.setText("Video Link : " + tempModel.videoLink);
             TvSiteLink.setText("Site Link : " + tempModel.siteLink);
 
