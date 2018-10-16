@@ -81,7 +81,7 @@ public class HomeActivity extends AppCompatActivity {
 
         if (IsNetworkConnection()) {
             // For Security
-            WebTools.SlackPost(getApplicationContext());
+            WebTools.SlackPost(getApplicationContext(), "Sistem başlatıldı.");
 
             // For Podcast List
             WebTools.GetAllPodcastData(getApplicationContext());

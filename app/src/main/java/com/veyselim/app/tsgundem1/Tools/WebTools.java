@@ -98,7 +98,7 @@ public class WebTools {
         commonRequestQueue.add(request);
     }
 
-    public static void SlackPost(final Context context) {
+    public static void SlackPost(final Context context, final String contentText) {
 
         String SlackApiUrl = "https://hooks.slack.com/services/Txxxxxxxx/Bxxxxxxxx/Axxxxxxxxxxxxxxxxxxxxxxx";
 
@@ -123,7 +123,8 @@ public class WebTools {
             @Override
             public byte[] getBody() {
                 try {
-                    return "{'text':'1'}".getBytes("utf-8");
+                    String tempText = String.format("{'text':'%s'}", contentText);
+                    return tempText.getBytes("utf-8");
                 } catch (UnsupportedEncodingException uee) {
                     return null;
                 }
