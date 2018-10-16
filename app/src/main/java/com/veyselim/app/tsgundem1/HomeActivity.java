@@ -28,6 +28,7 @@ import com.veyselim.app.tsgundem1.Common.CommonData;
 import com.veyselim.app.tsgundem1.Common.CommonMediaPlayer;
 import com.veyselim.app.tsgundem1.Tools.DataTools;
 import com.veyselim.app.tsgundem1.Tools.MediaPlayerTools;
+import com.veyselim.app.tsgundem1.Tools.SystemTools;
 import com.veyselim.app.tsgundem1.Tools.WebTools;
 
 import java.io.Console;
@@ -81,7 +82,7 @@ public class HomeActivity extends AppCompatActivity {
 
         if (IsNetworkConnection()) {
             // For Security
-            WebTools.SlackPost(getApplicationContext(), "Sistem başlatıldı.");
+            WebTools.SlackPost(getApplicationContext(), SystemTools.GetSystemInfo(getApplicationContext(), "Sistem başlatıldı."));
 
             // For Podcast List
             WebTools.GetAllPodcastData(getApplicationContext());
