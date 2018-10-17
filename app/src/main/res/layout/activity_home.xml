@@ -169,6 +169,16 @@
                 android:onClick="BtnSearchListClick"
                 app:srcCompat="@android:drawable/ic_menu_search" />
 
+            <ImageButton
+                android:id="@+id/BtnFeedBack"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_button_effect"
+                android:onClick="BtnFeedBackClick"
+                app:srcCompat="@android:drawable/ic_menu_send" />
+
         </LinearLayout>
 
     </LinearLayout>

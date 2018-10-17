@@ -6,4 +6,66 @@
     android:layout_height="match_parent"
     tools:context=".FeedBackActivity">
 
+    <LinearLayout
+        android:id="@+id/MainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/InputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="12dp"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/EditName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Adınız"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/EditMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lines="6"
+                android:ems="10"
+                android:hint="İstek şikayet öneri aklınıza takılan ne varsa geliştiriciye yazın..."
+                android:inputType="textMultiLine" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/MenuLayout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#a0bf4f3f"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/BtnBack"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_button_effect"
+                android:onClick="BtnBackClick"
+                app:srcCompat="@android:drawable/ic_menu_revert" />
+
+            <ImageButton
+                android:id="@+id/BtnSend"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_button_effect"
+                android:onClick="BtnSendClick"
+                app:srcCompat="@android:drawable/ic_menu_send" />
+
+        </LinearLayout>
+    </LinearLayout>
+
 </android.support.constraint.ConstraintLayout>
