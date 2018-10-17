@@ -15,6 +15,8 @@ import android.widget.Toast;
 import com.veyselim.app.tsgundem1.Model.PodcastModel;
 import com.veyselim.app.tsgundem1.Tools.DataTools;
 import com.veyselim.app.tsgundem1.Tools.MediaPlayerTools;
+import com.veyselim.app.tsgundem1.Tools.SystemTools;
+import com.veyselim.app.tsgundem1.Tools.WebTools;
 
 public class DetailsActivity extends AppCompatActivity {
 
@@ -125,6 +127,9 @@ public class DetailsActivity extends AppCompatActivity {
             }
         } catch (Exception exp) {
             Toast.makeText(this, "Uygulamaya dosya yazma izni verilmedi !", Toast.LENGTH_SHORT).show();
+
+            // For error message
+            WebTools.SlackPost(getApplicationContext(), SystemTools.GetSystemInfo(getApplicationContext(), "Hata : (DownloadPodcast Method) - " + exp.getMessage()));
         }
     }
 }
