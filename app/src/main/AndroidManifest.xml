@@ -32,6 +32,9 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".SearchListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".FeedBackActivity"
             android:screenOrientation="portrait"></activity>
     </application>
 
