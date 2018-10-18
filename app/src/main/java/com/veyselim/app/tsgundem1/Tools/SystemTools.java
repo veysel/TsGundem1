@@ -16,27 +16,21 @@ import java.util.Date;
 
 public class SystemTools {
     public static String GetSystemInfo(Context context, String infoContentText) {
-        String returnText = String.format("Id : %s\nModel : %s\nMac : %s\nÜretici Firma : %s\nTarih : %s\n\n%s",
+        String returnText = String.format("" +
+                        "Id : %s\n" +
+                        "Model : %s\n" +
+                        "Versiyon: %s (%s)\n" +
+                        "Üretici Firma : %s\n" +
+                        "Tarih : %s\n\n" +
+                        "%s",
                 Build.ID,
                 Build.MODEL,
-                GetMacAddress(context),
+                String.valueOf(Build.VERSION.RELEASE),
+                String.valueOf(Build.VERSION.SDK_INT),
                 Build.MANUFACTURER,
                 new SimpleDateFormat("dd.MM.yyyy HH:mm:ss").format(new Date()),
                 infoContentText
         );
         return returnText;
-    }
-
-    public static String GetMacAddress(Context context) {
-        ConnectivityManager connMgr = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo wifi = connMgr.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
-
-        try {
-            WifiManager wifiMan = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
-            WifiInfo wifiInf = wifiMan.getConnectionInfo();
-            return wifiInf.getMacAddress();
-        } catch (Exception e) {
-            return "00:00:00";
-        }
     }
 }
