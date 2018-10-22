@@ -38,6 +38,8 @@ import java.util.TimerTask;
 
 public class HomeActivity extends AppCompatActivity {
 
+    // Comment line for test
+
     public ListView ListContent;
     public TextView TvTitle, TvCurrentTime, TvMaxTime;
     public ImageView BtnPlayPause;
