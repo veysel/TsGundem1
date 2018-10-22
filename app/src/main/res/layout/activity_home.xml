@@ -96,15 +96,16 @@
             android:layout_height="70dp"
             android:background="#50BF4F3F"
             android:orientation="horizontal"
-            android:padding="17dp">
+            android:padding="8dp">
 
             <ImageView
                 android:id="@+id/BtnPrev"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_margin="15dp"
                 android:layout_weight="1"
                 android:onClick="BtnPrevClick"
-                app:srcCompat="@android:drawable/ic_media_rew" />
+                app:srcCompat="@mipmap/ts_rotate_left_128" />
 
             <ImageView
                 android:id="@+id/BtnPlayPause"
@@ -112,23 +113,16 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:onClick="BtnPlayPauseClick"
-                app:srcCompat="@android:drawable/ic_media_play" />
+                app:srcCompat="@mipmap/ts_play_128" />
 
             <ImageView
                 android:id="@+id/BtnNext"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_margin="15dp"
                 android:layout_weight="1"
                 android:onClick="BtnNextClick"
-                app:srcCompat="@android:drawable/ic_media_ff" />
-
-            <ImageView
-                android:id="@+id/BtnCancel"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:onClick="BtnCancelClick"
-                app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
+                app:srcCompat="@mipmap/ts_rotate_right_128" />
 
         </LinearLayout>
 

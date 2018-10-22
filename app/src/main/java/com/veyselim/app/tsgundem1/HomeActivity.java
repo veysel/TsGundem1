@@ -112,6 +112,10 @@ public class HomeActivity extends AppCompatActivity {
         MediaPlayerTools.NextMediaPlayer();
     }
 
+    /*
+    * This method not used
+    *
+    * */
     public void BtnCancelClick(View v) {
         MediaPlayerTools.StopMediaPlayer();
         ClearHomeComponent();
@@ -151,9 +155,9 @@ public class HomeActivity extends AppCompatActivity {
 
     public void UpdateBtnPlayPause() {
         if (MediaPlayerTools.IsPlayingMediaPlayer()) {
-            BtnPlayPause.setImageResource(android.R.drawable.ic_media_pause);
+            BtnPlayPause.setImageResource(R.mipmap.ts_pause_128);
         } else {
-            BtnPlayPause.setImageResource(android.R.drawable.ic_media_play);
+            BtnPlayPause.setImageResource(R.mipmap.ts_play_128);
         }
     }
 
@@ -180,7 +184,7 @@ public class HomeActivity extends AppCompatActivity {
         int tempTotalTime = CommonMediaPlayer.staticMediaPlayer.getDuration();
 
         if (tempCurrentTime <= tempTotalTime && tempCurrentTime >= tempTotalTime - 1000) {
-            BtnPlayPause.setImageResource(android.R.drawable.ic_media_play);
+            BtnPlayPause.setImageResource(R.mipmap.ts_play_128);
         }
         // Finish MediaPlayer - End
 
