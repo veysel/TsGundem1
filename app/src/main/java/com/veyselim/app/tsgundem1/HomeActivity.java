@@ -38,8 +38,6 @@ import java.util.TimerTask;
 
 public class HomeActivity extends AppCompatActivity {
 
-    // Comment line for test
-
     public ListView ListContent;
     public TextView TvTitle, TvCurrentTime, TvMaxTime;
     public ImageView BtnPlayPause;
@@ -115,9 +113,9 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     /*
-    * This method not used
-    *
-    * */
+     * This method not used
+     *
+     * */
     public void BtnCancelClick(View v) {
         MediaPlayerTools.StopMediaPlayer();
         ClearHomeComponent();
