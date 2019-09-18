@@ -32,7 +32,7 @@ import java.util.ArrayList;
  */
 
 public class WebTools {
-    private static String API_URL = "https://raw.githubusercontent.com/veysel/ts-gundem/master/ts-gundem.json";
+    private static String API_URL = "https://raw.githubusercontent.com/tsopenteam/gundem/master/gundem.json";
 
     private static RequestQueue commonRequestQueue;
 
